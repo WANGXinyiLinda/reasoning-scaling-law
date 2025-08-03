@@ -9,11 +9,13 @@ Large Language Models (LLMs) have demonstrated remarkable capabilities across a 
 
 ## Notebook
 
-This interactive notebook provide code for generating synthetic graphs,
+This interactive notebook provide basic/most important code for generating synthetic graphs,
 and training and evaluating language model on the generated graph. It should be 
 runable directly on Colab without GPUs, except the final sweeping function for 
 ploting the reasoning scaling law. This part requires training much larger language
 models thus would require GPUs.
+
+You can modify the code to suit your large scale experiment settings.
 
 ## Citation
 
