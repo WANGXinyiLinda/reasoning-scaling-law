@@ -1,11 +1,10 @@
 # Reasoning Scaling Law
-Implementation for **"Do Larger Language Models Imply Better Generalization? A Pretraining Scaling Law for Implicit Reasoning"** ([paper](https://arxiv.org/abs/2504.03635)).
+Implementation for **"Do Larger Language Models Generalize Better? A Scaling Law for Implicit Reasoning at Pretraining Time"** ([paper](https://arxiv.org/abs/2504.03635)).
 
 
 ## Abstract
 
-Large Language Models (LLMs) have demonstrated remarkable capabilities across a wide range of tasks requiring complex reasoning. However, the effects of scaling on their reasoning abilities remain insufficiently understood. In this paper, we introduce a synthetic multihop reasoning environment designed to closely replicate the structure and distribution of real-world large-scale knowledge graphs. Our reasoning task involves completing missing edges in the graph, which requires advanced multi-hop reasoning and mimics real-world reasoning scenarios. To evaluate this, we pretrain language models (LMs) from scratch solely on triples from the incomplete graph and assess their ability to infer the missing edges. Interestingly, we observe that overparameterization can impair reasoning performance due to excessive memorization. We investigate different factors that affect this U-shaped loss curve, including graph structure, model size, and training steps. To predict the optimal model size for a specific knowledge graph, we find an empirical scaling that linearly maps the knowledge graph search entropy to the optimal model size. This work provides new insights into the relationship between scaling and reasoning in LLMs, shedding light on possible ways to optimize their performance for reasoning tasks.
-
+Reasoning is an integral part of many tasks performed by language models (LMs). However, the effects of scaling model sizes and data on reasoning abilities at pretraining time remain understudied. To rigorously investigate this problem, we pretrain LMs from scratch on a synthetic implicit multihop reasoning environment designed to closely replicate the structure and distribution of real-world large-scale knowledge graphs. We then assess the LMs' ability to complete the missing edges in the graph, which requires multi-hop reasoning that can be viewed as a simplification of implicit reasoning during real-world pretraining. Interestingly, we observe that overparameterization can impair the implicit reasoning performance due to excessive memorization. We investigate different factors that affect the loss curve when scaling different components of the knowledge graph, model size, and training steps. To predict the optimal model size for a specific knowledge graph, we find an empirical scaling law that shows optimal-sized LMs can approximately reason over 0.008 bit information per parameter. This work shows counterintuitive effects of model size scaling and provides new insights into the relationship between scaling and reasoning in LLMs.
 
 ## Notebook
 
@@ -20,12 +19,10 @@ You can modify the code to suit your large scale experiment settings.
 ## Citation
 
 ```bibtex
-@misc{wang2025reasoning,
-  title={Do Larger Language Models Imply Better Generalization? A Pretraining Scaling Law for Implicit Reasoning},
-  author={Xinyi Wang and Shawn Tan and Mingyu Jin and William Yang Wang and Rameswar Panda and Yikang Sheng},
-  year={2025},
-  eprint={2504.03635},
-  archivePrefix={arXiv},
-  primaryClass={cs.AI}
+@article{wang2025larger,
+  title={Do larger language models imply better reasoning? a pretraining scaling law for reasoning},
+  author={Wang, Xinyi and Tan, Shawn and Jin, Mingyu and Wang, William Yang and Panda, Rameswar and Shen, Yikang},
+  journal={arXiv preprint arXiv:2504.03635},
+  year={2025}
 }
 ```
