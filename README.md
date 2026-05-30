@@ -1,10 +1,10 @@
 # Reasoning Scaling Law
-Implementation for **"Do Larger Language Models Generalize Better? A Scaling Law for Implicit Reasoning at Pretraining Time"** ([paper](https://arxiv.org/abs/2504.03635)).
+Simplified implementation for ICML 2026 paper **"Finding the Minimal Parameter Budget for Implicit Reasoning: A Data Complexity Driven Scaling Law for Language Models"** ([paper](https://openreview.net/forum?id=iuIPAhZpxz)).
 
 
 ## Abstract
 
-Reasoning is an integral part of many tasks performed by language models (LMs). However, the effects of scaling model sizes and data on reasoning abilities at pretraining time remain understudied. To rigorously investigate this problem, we pretrain LMs from scratch on a synthetic implicit multihop reasoning environment designed to closely replicate the structure and distribution of real-world large-scale knowledge graphs. We then assess the LMs' ability to complete the missing edges in the graph, which requires multi-hop reasoning that can be viewed as a simplification of implicit reasoning during real-world pretraining. Interestingly, we observe that overparameterization can impair the implicit reasoning performance due to excessive memorization. We investigate different factors that affect the loss curve when scaling different components of the knowledge graph, model size, and training steps. To predict the optimal model size for a specific knowledge graph, we find an empirical scaling law that shows optimal-sized LMs can approximately reason over 0.008 bit information per parameter. This work shows counterintuitive effects of model size scaling and provides new insights into the relationship between scaling and reasoning in LLMs.
+Reasoning is a core capability of language models (LMs), yet it remains unclear how much model capacity is necessary to support reasoning during pretraining. In this work, we study the minimal parameter budget required for implicit reasoning, defined as the ability to infer new facts from learned knowledge without explicit chain-of-thought supervision. To isolate this phenomenon, we pretrain LMs from scratch in a controlled synthetic environment that mimics the structure and distribution of real-world knowledge graphs, and evaluate their ability to complete missing edges via multi-hop inference. From both a theoretical and an empirical perspective, we identify a scaling law linking this optimal parameter budget to a graph search entropy measure. Across a wide range of model sizes, training steps, and graph complexities, we show that an optimally sized language model can reliably reason over approximately 0.008 bits of information per parameter at most. Our results characterize the minimal sufficient capacity for implicit reasoning during pretraining. Our findings provide principled guidance for matching model size to data complexity and offer new insights into the scaling behavior of reasoning in large language models.
 
 ## Notebook
 
@@ -19,10 +19,11 @@ You can modify the code to suit your large scale experiment settings.
 ## Citation
 
 ```bibtex
-@article{wang2025larger,
-  title={Do larger language models imply better reasoning? a pretraining scaling law for reasoning},
-  author={Wang, Xinyi and Tan, Shawn and Jin, Mingyu and Wang, William Yang and Panda, Rameswar and Shen, Yikang},
-  journal={arXiv preprint arXiv:2504.03635},
-  year={2025}
+@inproceedings{wang2025larger,
+title={Finding the Minimal Parameter Budget for Implicit Reasoning: A Data Complexity Driven Scaling Law for Language Models},
+author={Wang, Xinyi and Tan, Shawn and Xu, Shenbo and Jin, Mingyu and Wang, William Yang and Panda, Rameswar and Shen, Yikang},
+booktitle={Forty-third International Conference on Machine Learning},
+year={2026},
+url={https://openreview.net/forum?id=iuIPAhZpxz}
 }
 ```
